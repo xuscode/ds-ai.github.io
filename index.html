@@ -278,23 +278,25 @@
                     </div>
                 </div>
 
-                <div class="code-block-wrapper">
-                    <div class="code-block-header">
-                        <div class="code-block-dots">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                            <span class="dot dot-green"></span>
+                <div class="mcp-grid">
+                    <!-- V5 配置 -->
+                    <div class="code-block-wrapper mcp-block">
+                        <div class="code-block-header">
+                            <div class="code-block-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="code-block-label">CATIA V5 — mcp.json</span>
+                            <button class="btn-copy" data-code="v5" onclick="copyCode('v5')">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                                    <path d="M3 11V3C3 2.44772 3.44772 2 4 2H10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                                </svg>
+                                <span>复制</span>
+                            </button>
                         </div>
-                        <span class="code-block-label">mcp.json</span>
-                        <button class="btn-copy" data-code="mcp" onclick="copyCode('mcp')">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
-                                <path d="M3 11V3C3 2.44772 3.44772 2 4 2H10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                            </svg>
-                            <span>复制</span>
-                        </button>
-                    </div>
-                    <pre class="code-block"><code id="code-mcp">{
+                        <pre class="code-block"><code id="code-v5">{
   <span class="code-key">"mcpServers"</span>: {
     <span class="code-key">"catia-v5"</span>: {
       <span class="code-key">"command"</span>: <span class="code-string">"python"</span>,
@@ -303,7 +305,29 @@
         <span class="code-key">"CATIA_HOST"</span>: <span class="code-string">"localhost"</span>,
         <span class="code-key">"CATIA_PORT"</span>: <span class="code-string">"8099"</span>
       }
-    },
+    }
+  }
+}</code></pre>
+                    </div>
+                    <!-- V6 配置 -->
+                    <div class="code-block-wrapper mcp-block">
+                        <div class="code-block-header">
+                            <div class="code-block-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="code-block-label">3DEXPERIENCE V6 — mcp.json</span>
+                            <button class="btn-copy" data-code="v6" onclick="copyCode('v6')">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                                    <path d="M3 11V3C3 2.44772 3.44772 2 4 2H10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                                </svg>
+                                <span>复制</span>
+                            </button>
+                        </div>
+                        <pre class="code-block"><code id="code-v6">{
+  <span class="code-key">"mcpServers"</span>: {
     <span class="code-key">"3dexperience"</span>: {
       <span class="code-key">"type"</span>: <span class="code-string">"streamablehttp"</span>,
       <span class="code-key">"url"</span>: <span class="code-string">"https://3ds.example.com/api/mcp"</span>,
@@ -313,6 +337,7 @@
     }
   }
 }</code></pre>
+                    </div>
                 </div>
             </div>
 
@@ -322,7 +347,7 @@
                     <div class="step-item">
                         <div class="step-number">01</div>
                         <h4>安装 CLI 工具</h4>
-                        <p>通过 pip 安装 CATIA V5 CLI 命令行工具包</p>
+                        <p>PowerShell 一键安装脚本，支持 V5 / V6 多个版本</p>
                     </div>
                     <div class="step-arrow">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -332,7 +357,7 @@
                     <div class="step-item">
                         <div class="step-number">02</div>
                         <h4>配置连接参数</h4>
-                        <p>设置 CATIA 主机地址和端口环境变量</p>
+                        <p>选择对应版本执行，脚本自动完成环境配置</p>
                     </div>
                     <div class="step-arrow">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -342,7 +367,7 @@
                     <div class="step-item">
                         <div class="step-number">03</div>
                         <h4>命令行操作</h4>
-                        <p>在终端直接执行 CATIA 操作命令，或通过 AI 生成命令脚本</p>
+                        <p>安装后即可在终端使用 catia-cli 命令执行建模操作</p>
                     </div>
                 </div>
 
@@ -362,22 +387,14 @@
                             <span>复制</span>
                         </button>
                     </div>
-                    <pre class="code-block"><code id="code-cli"><span class="code-comment"># 安装 CLI 工具</span>
-pip install catia-v6r2025-cli
+                    <pre class="code-block"><code id="code-cli"><span class="code-comment"># V6 (3DEXPERIENCE)</span>
+iex(irm https://gitee.com/xuscode1/catia-v6r2025-cli/raw/master/www/install-cli.ps1)
+iex(irm https://gitee.com/xuscode1/catia-v6r2026-cli/raw/master/www/install-cli.ps1)
 
-<span class="code-comment"># 配置环境变量</span>
-<span class="code-key">export</span> CATIA_HOST=localhost
-<span class="code-key">export</span> CATIA_PORT=8099
-
-<span class="code-comment"># 创建零件</span>
-catia-cli part create <span class="code-string">"cylinder dia=50 len=100"</span>
-
-<span class="code-comment"># 打开装配体并导出</span>
-catia-cli assembly open ./flange.CATProduct
-catia-cli export step ./output/flange.stp
-
-<span class="code-comment"># 批量操作</span>
-catia-cli batch convert ./parts/ --to stp --out ./exports/</code></pre>
+<span class="code-comment"># V5 (CATIA)</span>
+iex(irm https://gitee.com/xuscode1/catia-v5r27-cli/raw/master/www/install-cli.ps1)
+iex(irm https://gitee.com/xuscode1/catia-v5r29-cli/raw/master/www/install-cli.ps1)
+iex(irm https://gitee.com/xuscode1/catia-v5r36-cli/raw/master/www/install-cli.ps1)</code></pre>
                 </div>
             </div>
 

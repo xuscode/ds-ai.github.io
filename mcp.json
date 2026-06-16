@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "catia-v5": {
+      "command": "python",
+      "args": ["-m", "catia_v5_mcp.server"],
+      "env": {
+        "CATIA_HOST": "localhost",
+        "CATIA_PORT": "8099"
+      }
+    },
+    "3dexperience": {
+      "type": "streamablehttp",
+      "url": "https://3ds.example.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer <YOUR_3DS_TOKEN>"
+      }
+    }
+  }
+}

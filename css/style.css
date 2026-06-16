@@ -861,6 +861,24 @@ button {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* MCP Side-by-Side Grid */
+.mcp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.mcp-grid .code-block-wrapper {
+    max-width: none;
+    margin: 0;
+}
+
+.mcp-block .code-block {
+    min-height: 180px;
+}
+
 .code-block-header {
     display: flex;
     align-items: center;
@@ -953,6 +971,11 @@ button {
     .code-block {
         font-size: 12px;
         padding: 16px;
+    }
+
+    .mcp-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 }
 
