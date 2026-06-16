@@ -14,7 +14,10 @@
     --color-success: #059669;
     --color-warning: #D97706;
     --color-danger: #DC2626;
-    
+
+    /* Scroll offset for fixed navbar */
+    scroll-padding-top: 80px;
+
     /* Neutrals */
     --color-bg: #F4F6F8;
     --color-bg-white: #FFFFFF;
