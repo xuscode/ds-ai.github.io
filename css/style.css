@@ -853,7 +853,7 @@ button {
 
 /* Code Block */
 .code-block-wrapper {
-    max-width: 700px;
+    max-width: 880px;
     margin: 0 auto;
     border-radius: var(--radius-lg);
     overflow: hidden;
