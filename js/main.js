@@ -24,12 +24,12 @@
             desc: '基于标准 MCP 协议，一行 JSON 配置即可让 AI 客户端连接 CATIA 与 3DEXPERIENCE'
         },
         cli: {
-            title: 'CLI 命令行 — 终端直达，脚本自动化',
-            desc: '通过 pip 安装命令行工具，在终端直接操控 CATIA，完美适配 CI/CD 与批量任务'
+            title: 'CLI 命令行 — 一键下载CLI 工具包',
+            desc: '通过命令行工具，一键下载打包开发好的CAA AUTOMATION CLI程序，调用更省Token'
         },
         skill: {
-            title: 'My Coffee Skill — AI 原生技能插件',
-            desc: '让 agent 帮你搜索门店、浏览商品并快速下单，支持 9 大 AI 平台'
+            title: 'My 3DEXPERIENCE Skill — 技能包',
+            desc: '让 agent 搭建工作流，让多种工具协同工作，实现复杂任务的自动化'
         }
     };
 
