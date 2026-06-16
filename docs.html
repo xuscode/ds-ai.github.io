@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 文档 — 3DEXPERIENCE / V5 MCP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="docs-page">
+    <!-- ===== Navigation ===== -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;">
+                    <svg class="nav-logo" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="url(#logo-grad)" stroke-width="2.5"/>
+                        <path d="M16 4L22 16L16 28L10 16L16 4Z" fill="url(#logo-grad)" opacity="0.9"/>
+                        <circle cx="16" cy="16" r="3" fill="white"/>
+                        <defs>
+                            <linearGradient id="logo-grad" x1="4" y1="4" x2="28" y2="28">
+                                <stop stop-color="#0078D7"/>
+                                <stop offset="1" stop-color="#00B4D8"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="nav-title">3DEXPERIENCE MCP</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#features">核心能力</a>
+                <a href="index.html#quickstart">快速接入</a>
+                <a href="index.html#examples">使用示例</a>
+                <a href="docs.html" class="nav-link-docs">开发文档</a>
+            </div>
+            <div class="nav-docs-actions">
+                <div class="docs-search">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="7" cy="7" r="5.5" stroke="#94A3B8" stroke-width="1.3"/>
+                        <path d="M11 11L14.5 14.5" stroke="#94A3B8" stroke-width="1.3" stroke-linecap="round"/>
+                    </svg>
+                    <input type="text" class="docs-search-input" placeholder="搜索工具...">
+                </div>
+                <button class="btn-nav-cta" id="docsLoginBtn">登录</button>
+            </div>
+            <button class="mobile-menu-btn" id="docsMobileMenuBtn" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== Main Layout ===== -->
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="docs-sidebar-inner">
+                <!-- CATIA V5 — 零件建模 -->
+                <div class="sidebar-group">
+                    <button class="sidebar-group-header active" data-group="part">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5 — 零件</span>
+                        <span class="sidebar-group-count">3</span>
+                        <svg class="sidebar-group-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M4 2.5L7.5 6L4 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-group-items">
+                        <a href="#partCreate" class="sidebar-tool active" data-tool="partCreate">partCreate</a>
+                        <a href="#partModifyParam" class="sidebar-tool" data-tool="partModifyParam">partModifyParam</a>
+                        <a href="#partExport" class="sidebar-tool" data-tool="partExport">partExport</a>
+                    </div>
+                </div>
+
+                <!-- CATIA V5 — 装配 -->
+                <div class="sidebar-group">
+                    <button class="sidebar-group-header active" data-group="assembly">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5 — 装配</span>
+                        <span class="sidebar-group-count">2</span>
+                        <svg class="sidebar-group-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M4 2.5L7.5 6L4 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-group-items">
+                        <a href="#assemblyLoad" class="sidebar-tool" data-tool="assemblyLoad">assemblyLoad</a>
+                        <a href="#assemblyAddConstraint" class="sidebar-tool" data-tool="assemblyAddConstraint">assemblyAddConstraint</a>
+                    </div>
+                </div>
+
+                <!-- 工程图 -->
+                <div class="sidebar-group">
+                    <button class="sidebar-group-header active" data-group="drawing">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <rect x="1" y="1" width="14" height="11" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+                            <path d="M4 5H12M4 8H10M4 11H8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <rect x="4" y="12" width="8" height="3" rx="0.5" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>工程图</span>
+                        <span class="sidebar-group-count">2</span>
+                        <svg class="sidebar-group-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M4 2.5L7.5 6L4 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-group-items">
+                        <a href="#drawingGenerate" class="sidebar-tool" data-tool="drawingGenerate">drawingGenerate</a>
+                        <a href="#drawingExport" class="sidebar-tool" data-tool="drawingExport">drawingExport</a>
+                    </div>
+                </div>
+
+                <!-- 3DEXPERIENCE — PLM -->
+                <div class="sidebar-group">
+                    <button class="sidebar-group-header active" data-group="plm">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <circle cx="6" cy="5" r="3.5" stroke="currentColor" stroke-width="1.3"/>
+                            <path d="M8.5 7.5L13.5 12.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M9 7L7 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>3DEXPERIENCE — PLM</span>
+                        <span class="sidebar-group-count">2</span>
+                        <svg class="sidebar-group-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M4 2.5L7.5 6L4 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-group-items">
+                        <a href="#plmSearch" class="sidebar-tool" data-tool="plmSearch">plmSearch</a>
+                        <a href="#plmGetBOM" class="sidebar-tool" data-tool="plmGetBOM">plmGetBOM</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile sidebar toggle -->
+        <button class="sidebar-mobile-toggle" id="sidebarMobileToggle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M3 6H17M3 10H17M3 14H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <!-- Main Content -->
+        <main class="docs-content" id="docsContent">
+            <div class="docs-content-inner">
+                <!-- Overview -->
+                <section class="docs-section" id="overview">
+                    <h1 class="docs-page-title">工具文档</h1>
+                    <p class="docs-page-desc">共 9 个工具，覆盖 CATIA V5 建模、装配、工程图及 3DEXPERIENCE PLM 数据管理全流程</p>
+                </section>
+
+                <!-- ========== 零件建模 — partCreate ========== -->
+                <section class="docs-section tool-section" id="partCreate">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5 — 零件</span>
+                    </div>
+                    <h2 class="tool-name">partCreate</h2>
+                    <p class="tool-desc">在 CATIA V5 中创建新零件文档，并支持批量添加建模特征</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>partName</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>零件名称，保存 .CATPart 文件名</td></tr>
+                                <tr><td><code>features</code></td><td><span class="type-tag">array[object]</span></td><td>—</td><td>特征列表，按顺序创建。每项包含以下字段</td></tr>
+                                <tr><td class="pl-6"><code>type</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>特征类型：pad / pocket / hole / shaft / groove / rib / slot / fillet / chamfer / draft / shell / mirror</td></tr>
+                                <tr><td class="pl-6"><code>sketch</code></td><td><span class="type-tag">object</span></td><td><span class="required-badge">必填</span></td><td>草图定义。包含以下字段</td></tr>
+                                <tr><td class="pl-10"><code>plane</code></td><td><span class="type-tag">string</span></td><td>—</td><td>草图平面：xy / yz / zx，默认 xy</td></tr>
+                                <tr><td class="pl-10"><code>profile</code></td><td><span class="type-tag">array[array[number]]</span></td><td><span class="required-badge">必填</span></td><td>轮廓点坐标列表 [[x1,y1], [x2,y2], ...] 毫米</td></tr>
+                                <tr><td class="pl-6"><code>limit</code></td><td><span class="type-tag">number</span> | <span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>拉伸长度 (mm) 或终止条件：upToNext / upToLast / upToPlane / upToSurface</td></tr>
+                                <tr><td class="pl-6"><code>direction</code></td><td><span class="type-tag">string</span></td><td>—</td><td>拉伸方向：positive / negative / symmetric，默认 positive</td></tr>
+                                <tr><td><code>material</code></td><td><span class="type-tag">string</span></td><td>—</td><td>材料名称，如 Steel / Aluminum / Titanium</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 创建一个带四个沉头孔的铝合金法兰盘</span>
+{
+  "partName": "Flange_Plate_001",
+  "material": "Aluminum",
+  "features": [
+    { "type": "pad", "sketch": { "plane": "xy", "profile": [[0,0],[200,0],[200,200],[0,200]] }, "limit": 25 },
+    { "type": "hole", "position": [30, 30, 0], "diameter": 10, "depth": 25, "holeType": "countersunk", "headDiameter": 16 }
+  ]
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>partId</code></td><td><span class="type-tag">string</span></td><td>零件唯一 ID</td></tr>
+                                <tr><td><code>partName</code></td><td><span class="type-tag">string</span></td><td>零件名称</td></tr>
+                                <tr><td><code>filePath</code></td><td><span class="type-tag">string</span></td><td>保存路径</td></tr>
+                                <tr><td><code>bounds</code></td><td><span class="type-tag">object</span></td><td>包围盒信息</td></tr>
+                                <tr><td class="pl-6"><code>length</code></td><td><span class="type-tag">number</span></td><td>X 方向长度 mm</td></tr>
+                                <tr><td class="pl-6"><code>width</code></td><td><span class="type-tag">number</span></td><td>Y 方向宽度 mm</td></tr>
+                                <tr><td class="pl-6"><code>height</code></td><td><span class="type-tag">number</span></td><td>Z 方向高度 mm</td></tr>
+                                <tr><td><code>featureCount</code></td><td><span class="type-tag">number</span></td><td>创建的特征数量</td></tr>
+                                <tr><td><code>features</code></td><td><span class="type-tag">array[object]</span></td><td>创建的特征列表</td></tr>
+                                <tr><td class="pl-6"><code>featureId</code></td><td><span class="type-tag">string</span></td><td>特征唯一 ID</td></tr>
+                                <tr><td class="pl-6"><code>type</code></td><td><span class="type-tag">string</span></td><td>特征类型</td></tr>
+                                <tr><td class="pl-6"><code>status</code></td><td><span class="type-tag">string</span></td><td>创建状态：ok / warning / failed</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 零件建模 — partModifyParam ========== -->
+                <section class="docs-section tool-section" id="partModifyParam">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5 — 零件</span>
+                    </div>
+                    <h2 class="tool-name">partModifyParam</h2>
+                    <p class="tool-desc">修改已打开零件的特征参数、草图和约束</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>partId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>目标零件 ID，传入 active 可操作当前活动零件</td></tr>
+                                <tr><td><code>featureId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>要修改的特征 ID</td></tr>
+                                <tr><td><code>params</code></td><td><span class="type-tag">object</span></td><td><span class="required-badge">必填</span></td><td>要修改的参数键值对</td></tr>
+                                <tr><td class="pl-6"><code>limit</code></td><td><span class="type-tag">number</span></td><td>—</td><td>修改拉伸/切除长度 mm</td></tr>
+                                <tr><td class="pl-6"><code>diameter</code></td><td><span class="type-tag">number</span></td><td>—</td><td>修改孔径 mm</td></tr>
+                                <tr><td class="pl-6"><code>radius</code></td><td><span class="type-tag">number</span></td><td>—</td><td>修改圆角/倒角半径 mm</td></tr>
+                                <tr><td class="pl-6"><code>angle</code></td><td><span class="type-tag">number</span></td><td>—</td><td>修改角度 °</td></tr>
+                                <tr><td><code>recompute</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>是否执行 Part.Update 刷新模型，默认 true</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 将凸台拉伸长度改为 50mm，圆角半径改为 3mm，并刷新</span>
+{
+  "partId": "active",
+  "featureId": "Pad.1",
+  "params": { "limit": 50, "radius": 3 },
+  "recompute": true
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>featureId</code></td><td><span class="type-tag">string</span></td><td>修改的特征 ID</td></tr>
+                                <tr><td><code>updatedParams</code></td><td><span class="type-tag">object</span></td><td>成功更新的参数键值对</td></tr>
+                                <tr><td><code>updateStatus</code></td><td><span class="type-tag">string</span></td><td>刷新结果：ok / needsFix / failed</td></tr>
+                                <tr><td><code>warnings</code></td><td><span class="type-tag">array[string]</span></td><td>刷新警告信息列表</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 零件建模 — partExport ========== -->
+                <section class="docs-section tool-section" id="partExport">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5 — 零件</span>
+                    </div>
+                    <h2 class="tool-name">partExport</h2>
+                    <p class="tool-desc">将零件导出为 STEP、IGES、STL 等中性格式文件</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>partId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>零件 ID 或 active</td></tr>
+                                <tr><td><code>format</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>导出格式：step / iges / stl / catpart</td></tr>
+                                <tr><td><code>outputPath</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>输出路径，支持绝对路径或相对路径</td></tr>
+                                <tr><td><code>options</code></td><td><span class="type-tag">object</span></td><td>—</td><td>格式相关选项</td></tr>
+                                <tr><td class="pl-6"><code>stepVersion</code></td><td><span class="type-tag">string</span></td><td>—</td><td>STEP 版本：AP203 / AP214 / AP242，默认 AP214</td></tr>
+                                <tr><td class="pl-6"><code>stlResolution</code></td><td><span class="type-tag">number</span></td><td>—</td><td>STL 网格精度 0-1，默认 0.01</td></tr>
+                                <tr><td class="pl-6"><code>stlBinary</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>STL 是否二进制格式，默认 true</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 导出当前活动零件为 STEP AP242 格式</span>
+{
+  "partId": "active",
+  "format": "step",
+  "outputPath": "D:/Export/Bracket_001.stp",
+  "options": { "stepVersion": "AP242" }
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>outputPath</code></td><td><span class="type-tag">string</span></td><td>实际输出文件完整路径</td></tr>
+                                <tr><td><code>format</code></td><td><span class="type-tag">string</span></td><td>导出格式</td></tr>
+                                <tr><td><code>fileSize</code></td><td><span class="type-tag">number</span></td><td>文件大小 bytes</td></tr>
+                                <tr><td><code>duration</code></td><td><span class="type-tag">number</span></td><td>导出耗时 ms</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 装配 — assemblyLoad ========== -->
+                <section class="docs-section tool-section" id="assemblyLoad">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5 — 装配</span>
+                    </div>
+                    <h2 class="tool-name">assemblyLoad</h2>
+                    <p class="tool-desc">在 CATIA 中加载装配体，支持批量插入子组件和零件，并返回装配树结构</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>assemblyPath</code></td><td><span class="type-tag">string</span></td><td>—</td><td>已有 .CATProduct 路径，为空则新建装配</td></tr>
+                                <tr><td><code>assemblyName</code></td><td><span class="type-tag">string</span></td><td>—</td><td>新装配体名称，默认 Assembly_001</td></tr>
+                                <tr><td><code>components</code></td><td><span class="type-tag">array[object]</span></td><td>—</td><td>要插入的零件/子装配列表</td></tr>
+                                <tr><td class="pl-6"><code>filePath</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>零件或子装配文件路径</td></tr>
+                                <tr><td class="pl-6"><code>position</code></td><td><span class="type-tag">array[number]</span></td><td>—</td><td>插入坐标 [x, y, z] mm，默认 [0, 0, 0]</td></tr>
+                                <tr><td class="pl-6"><code>instanceName</code></td><td><span class="type-tag">string</span></td><td>—</td><td>实例名称，默认用文件名</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 新建装配体并插入三个零件</span>
+{
+  "assemblyName": "Gearbox_Main",
+  "components": [
+    { "filePath": "D:/Parts/Housing.CATPart", "position": [0, 0, 0] },
+    { "filePath": "D:/Parts/Gear_Input.CATPart", "position": [50, 0, 0] },
+    { "filePath": "D:/Parts/Gear_Output.CATPart", "position": [50, 120, 0] }
+  ]
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>assemblyId</code></td><td><span class="type-tag">string</span></td><td>装配体 ID</td></tr>
+                                <tr><td><code>assemblyName</code></td><td><span class="type-tag">string</span></td><td>装配体名称</td></tr>
+                                <tr><td><code>componentCount</code></td><td><span class="type-tag">number</span></td><td>总组件数量</td></tr>
+                                <tr><td><code>tree</code></td><td><span class="type-tag">array[object]</span></td><td>装配树结构</td></tr>
+                                <tr><td class="pl-6"><code>instanceId</code></td><td><span class="type-tag">string</span></td><td>实例唯一 ID</td></tr>
+                                <tr><td class="pl-6"><code>instanceName</code></td><td><span class="type-tag">string</span></td><td>实例名称</td></tr>
+                                <tr><td class="pl-6"><code>partNumber</code></td><td><span class="type-tag">string</span></td><td>零件编号（PartNumber）</td></tr>
+                                <tr><td class="pl-6"><code>position</code></td><td><span class="type-tag">array[number]</span></td><td>当前位置 [x, y, z]</td></tr>
+                                <tr><td class="pl-6"><code>children</code></td><td><span class="type-tag">array[object]</span></td><td>子组件列表（递归结构）</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 装配 — assemblyAddConstraint ========== -->
+                <section class="docs-section tool-section" id="assemblyAddConstraint">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                            <rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5 — 装配</span>
+                    </div>
+                    <h2 class="tool-name">assemblyAddConstraint</h2>
+                    <p class="tool-desc">在装配体中为两个组件添加几何约束（重合、接触、偏移、角度）</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>assemblyId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>装配体 ID</td></tr>
+                                <tr><td><code>constraintType</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>约束类型：coincidence / contact / offset / angle / fix</td></tr>
+                                <tr><td><code>refElementA</code></td><td><span class="type-tag">object</span></td><td><span class="required-badge">必填</span></td><td>第一个参考元素</td></tr>
+                                <tr><td class="pl-6"><code>instanceId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>组件实例 ID</td></tr>
+                                <tr><td class="pl-6"><code>element</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>几何元素标识，如 xyPlane / zxFace / zxPlane / cylindricalFace</td></tr>
+                                <tr><td><code>refElementB</code></td><td><span class="type-tag">object</span></td><td><span class="required-badge">必填</span></td><td>第二个参考元素（结构同上）</td></tr>
+                                <tr><td><code>offset</code></td><td><span class="type-tag">number</span></td><td>—</td><td>偏移距离 mm（offset 类型必填）</td></tr>
+                                <tr><td><code>angle</code></td><td><span class="type-tag">number</span></td><td>—</td><td>角度值 °（angle 类型必填）</td></tr>
+                                <tr><td><code>orientation</code></td><td><span class="type-tag">string</span></td><td>—</td><td>方向：same / opposite，默认 same</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 将两个零件的 XY 平面设为重合约束</span>
+{
+  "assemblyId": "Product.1",
+  "constraintType": "coincidence",
+  "refElementA": { "instanceId": "Gear_Input.1", "element": "xyPlane" },
+  "refElementB": { "instanceId": "Gear_Output.1", "element": "xyPlane" },
+  "orientation": "opposite"
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>constraintId</code></td><td><span class="type-tag">string</span></td><td>创建的约束 ID</td></tr>
+                                <tr><td><code>constraintType</code></td><td><span class="type-tag">string</span></td><td>约束类型</td></tr>
+                                <tr><td><code>status</code></td><td><span class="type-tag">string</span></td><td>状态：ok / overconstrained / invalid</td></tr>
+                                <tr><td><code>dofRemaining</code></td><td><span class="type-tag">number</span></td><td>剩余自由度</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 工程图 — drawingGenerate ========== -->
+                <section class="docs-section tool-section" id="drawingGenerate">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <rect x="1" y="1" width="14" height="11" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+                            <path d="M4 5H12M4 8H10M4 11H8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <rect x="4" y="12" width="8" height="3" rx="0.5" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>工程图</span>
+                    </div>
+                    <h2 class="tool-name">drawingGenerate</h2>
+                    <p class="tool-desc">从零件或装配体自动生成工程图，支持多视图、标注和 BOM 表</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sourceId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>零件 ID 或装配体 ID</td></tr>
+                                <tr><td><code>views</code></td><td><span class="type-tag">array[object]</span></td><td><span class="required-badge">必填</span></td><td>视图定义列表</td></tr>
+                                <tr><td class="pl-6"><code>type</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>视图类型：front / top / right / isometric / section / detail / auxiliary</td></tr>
+                                <tr><td class="pl-6"><code>position</code></td><td><span class="type-tag">array[number]</span></td><td><span class="required-badge">必填</span></td><td>视图在图框位置 [x, y] mm</td></tr>
+                                <tr><td class="pl-6"><code>scale</code></td><td><span class="type-tag">number</span></td><td>—</td><td>视图比例，如 1.0, 2.0, 0.5，默认 1.0</td></tr>
+                                <tr><td class="pl-6"><code>hiddenLines</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>是否显示隐藏线，默认 false</td></tr>
+                                <tr><td><code>sheetSize</code></td><td><span class="type-tag">string</span></td><td>—</td><td>图幅：A0 / A1 / A2 / A3 / A4，默认 A3</td></tr>
+                                <tr><td><code>standard</code></td><td><span class="type-tag">string</span></td><td>—</td><td>制图标准：ISO / ANSI / JIS / GB，默认 ISO</td></tr>
+                                <tr><td><code>includeBOM</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>装配图是否生成 BOM 表，默认 false</td></tr>
+                                <tr><td><code>dimensions</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>是否自动标注尺寸，默认 true</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 生成 A3 ISO 工程图：主视图 + 右视图 + 等轴测，自动标注</span>
+{
+  "sourceId": "Part.1",
+  "sheetSize": "A3",
+  "standard": "ISO",
+  "dimensions": true,
+  "views": [
+    { "type": "front", "position": [120, 150], "scale": 1.0 },
+    { "type": "right", "position": [320, 150], "scale": 1.0 },
+    { "type": "isometric", "position": [420, 300], "scale": 0.5 }
+  ]
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>drawingId</code></td><td><span class="type-tag">string</span></td><td>工程图文档 ID</td></tr>
+                                <tr><td><code>sheetCount</code></td><td><span class="type-tag">number</span></td><td>图页数量</td></tr>
+                                <tr><td><code>views</code></td><td><span class="type-tag">array[object]</span></td><td>创建的视图列表</td></tr>
+                                <tr><td class="pl-6"><code>viewId</code></td><td><span class="type-tag">string</span></td><td>视图 ID</td></tr>
+                                <tr><td class="pl-6"><code>type</code></td><td><span class="type-tag">string</span></td><td>视图类型</td></tr>
+                                <tr><td class="pl-6"><code>status</code></td><td><span class="type-tag">string</span></td><td>生成状态：ok / needsUpdate / failed</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 工程图 — drawingExport ========== -->
+                <section class="docs-section tool-section" id="drawingExport">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <rect x="1" y="1" width="14" height="11" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+                            <path d="M4 5H12M4 8H10M4 11H8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <rect x="4" y="12" width="8" height="3" rx="0.5" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>工程图</span>
+                    </div>
+                    <h2 class="tool-name">drawingExport</h2>
+                    <p class="tool-desc">将工程图导出为 PDF、DXF、DWG 或图片格式</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>drawingId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>工程图 ID 或 active</td></tr>
+                                <tr><td><code>format</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>导出格式：pdf / dxf / dwg / png / svg</td></tr>
+                                <tr><td><code>outputPath</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>输出路径</td></tr>
+                                <tr><td><code>options</code></td><td><span class="type-tag">object</span></td><td>—</td><td>格式相关选项</td></tr>
+                                <tr><td class="pl-6"><code>pdfColor</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>PDF 是否彩色，默认 false</td></tr>
+                                <tr><td class="pl-6"><code>pdfDpi</code></td><td><span class="type-tag">number</span></td><td>—</td><td>PDF 分辨率，默认 300</td></tr>
+                                <tr><td class="pl-6"><code>dxfVersion</code></td><td><span class="type-tag">string</span></td><td>—</td><td>DXF 版本：R12 / R14 / 2000 / 2018，默认 2018</td></tr>
+                                <tr><td class="pl-6"><code>sheets</code></td><td><span class="type-tag">array[number]</span></td><td>—</td><td>指定图页号导出，默认全部</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 导出当前工程图为黑白 PDF，300 DPI</span>
+{
+  "drawingId": "active",
+  "format": "pdf",
+  "outputPath": "D:/Drawings/Gearbox_Assembly.pdf",
+  "options": { "pdfColor": false, "pdfDpi": 300 }
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>outputPath</code></td><td><span class="type-tag">string</span></td><td>输出文件路径</td></tr>
+                                <tr><td><code>format</code></td><td><span class="type-tag">string</span></td><td>导出格式</td></tr>
+                                <tr><td><code>sheetCount</code></td><td><span class="type-tag">number</span></td><td>导出图页数</td></tr>
+                                <tr><td><code>fileSize</code></td><td><span class="type-tag">number</span></td><td>文件大小 bytes</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== PLM — plmSearch ========== -->
+                <section class="docs-section tool-section" id="plmSearch">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <circle cx="6" cy="5" r="3.5" stroke="currentColor" stroke-width="1.3"/>
+                            <path d="M8.5 7.5L13.5 12.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M9 7L7 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>3DEXPERIENCE — PLM</span>
+                    </div>
+                    <h2 class="tool-name">plmSearch</h2>
+                    <p class="tool-desc">在 3DEXPERIENCE PLM 平台中搜索工程数据（零件、装配、图纸、变更单等）</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>query</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>搜索关键字，支持 Part Number / Title / Description</td></tr>
+                                <tr><td><code>objectType</code></td><td><span class="type-tag">string</span></td><td>—</td><td>对象类型：Part / Assembly / Drawing / ECO / MCO / Document，默认全部</td></tr>
+                                <tr><td><code>state</code></td><td><span class="type-tag">string</span></td><td>—</td><td>生命周期状态：InWork / Frozen / Released / Obsolete</td></tr>
+                                <tr><td><code>owner</code></td><td><span class="type-tag">string</span></td><td>—</td><td>负责人/创建者用户名</td></tr>
+                                <tr><td><code>pageSize</code></td><td><span class="type-tag">number</span></td><td>—</td><td>每页返回数量，默认 20</td></tr>
+                                <tr><td><code>page</code></td><td><span class="type-tag">number</span></td><td>—</td><td>页码，从 1 开始，默认 1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 搜索所有已发布的支架类零件</span>
+{
+  "query": "Bracket",
+  "objectType": "Part",
+  "state": "Released",
+  "pageSize": 10
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>totalResults</code></td><td><span class="type-tag">number</span></td><td>总结果数</td></tr>
+                                <tr><td><code>page</code></td><td><span class="type-tag">number</span></td><td>当前页码</td></tr>
+                                <tr><td><code>results</code></td><td><span class="type-tag">array[object]</span></td><td>查询结果列表</td></tr>
+                                <tr><td class="pl-6"><code>objectId</code></td><td><span class="type-tag">string</span></td><td>对象 PLM ID</td></tr>
+                                <tr><td class="pl-6"><code>type</code></td><td><span class="type-tag">string</span></td><td>对象类型</td></tr>
+                                <tr><td class="pl-6"><code>partNumber</code></td><td><span class="type-tag">string</span></td><td>零件编号</td></tr>
+                                <tr><td class="pl-6"><code>title</code></td><td><span class="type-tag">string</span></td><td>标题</td></tr>
+                                <tr><td class="pl-6"><code>revision</code></td><td><span class="type-tag">string</span></td><td>当前版次</td></tr>
+                                <tr><td class="pl-6"><code>state</code></td><td><span class="type-tag">string</span></td><td>生命周期状态</td></tr>
+                                <tr><td class="pl-6"><code>modified</code></td><td><span class="type-tag">string</span></td><td>最后修改时间 ISO 8601</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== PLM — plmGetBOM ========== -->
+                <section class="docs-section tool-section" id="plmGetBOM">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <circle cx="6" cy="5" r="3.5" stroke="currentColor" stroke-width="1.3"/>
+                            <path d="M8.5 7.5L13.5 12.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M9 7L7 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>3DEXPERIENCE — PLM</span>
+                    </div>
+                    <h2 class="tool-name">plmGetBOM</h2>
+                    <p class="tool-desc">获取指定对象的 BOM 结构（物料清单），支持多层级展开</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>objectId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>根对象 PLM ID（装配或产品）</td></tr>
+                                <tr><td><code>depth</code></td><td><span class="type-tag">number</span></td><td>—</td><td>展开层级深度，1 为仅第一层，-1 为全部展开，默认 -1</td></tr>
+                                <tr><td><code>config</code></td><td><span class="type-tag">string</span></td><td>—</td><td>配置/变型筛选，如 Design / Manufacturing</td></tr>
+                                <tr><td><code>includeQuantity</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>是否包含数量，默认 true</td></tr>
+                                <tr><td><code>includeMetadata</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>是否包含元数据（材料/重量等），默认 true</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-block">
+                        <div class="example-label">例子</div>
+                        <pre class="example-code"><code><span class="code-comment"># 获取装配体全部 BOM 结构，包含材料与数量</span>
+{
+  "objectId": "PLM-2024-GB-00123",
+  "depth": -1,
+  "includeQuantity": true,
+  "includeMetadata": true
+}</code></pre>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>rootObjectId</code></td><td><span class="type-tag">string</span></td><td>根对象 ID</td></tr>
+                                <tr><td><code>bomItems</code></td><td><span class="type-tag">array[object]</span></td><td>BOM 行项目列表</td></tr>
+                                <tr><td class="pl-6"><code>level</code></td><td><span class="type-tag">number</span></td><td>层级（1 为直接子件）</td></tr>
+                                <tr><td class="pl-6"><code>objectId</code></td><td><span class="type-tag">string</span></td><td>子件 PLM ID</td></tr>
+                                <tr><td class="pl-6"><code>partNumber</code></td><td><span class="type-tag">string</span></td><td>零件编号</td></tr>
+                                <tr><td class="pl-6"><code>title</code></td><td><span class="type-tag">string</span></td><td>标题</td></tr>
+                                <tr><td class="pl-6"><code>quantity</code></td><td><span class="type-tag">number</span></td><td>数量</td></tr>
+                                <tr><td class="pl-6"><code>unit</code></td><td><span class="type-tag">string</span></td><td>单位：ea / kg / m / L</td></tr>
+                                <tr><td class="pl-6"><code>material</code></td><td><span class="type-tag">string</span></td><td>材料</td></tr>
+                                <tr><td class="pl-6"><code>mass</code></td><td><span class="type-tag">number</span></td><td>质量 kg</td></tr>
+                                <tr><td class="pl-6"><code>children</code></td><td><span class="type-tag">array[object]</span></td><td>子项 BOM（递归结构）</td></tr>
+                                <tr><td><code>totalItems</code></td><td><span class="type-tag">number</span></td><td>BOM 总行数（含所有层级）</td></tr>
+                                <tr><td><code>totalMass</code></td><td><span class="type-tag">number</span></td><td>总质量 kg</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/docs.js"></script>
+</body>
+</html>

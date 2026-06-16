@@ -1,0 +1,419 @@
+/* ============================================
+   Docs Page — Developer Documentation Styles
+   ============================================ */
+
+.docs-page {
+    background: var(--color-bg);
+    min-height: 100vh;
+}
+
+/* ============================================
+   NAV EXTENSIONS (docs-specific)
+   ============================================ */
+.nav-docs-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.docs-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    transition: border-color var(--transition-fast);
+}
+
+.docs-search:focus-within {
+    border-color: var(--color-primary);
+    background: var(--color-bg-white);
+}
+
+.docs-search-input {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    color: var(--color-text);
+    outline: none;
+    width: 160px;
+    font-family: var(--font-sans);
+}
+
+.docs-search-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.docs-page .nav .btn-nav-cta {
+    padding: 8px 20px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+}
+
+/* ============================================
+   MAIN LAYOUT (Sidebar + Content)
+   ============================================ */
+.docs-layout {
+    display: flex;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-top: var(--nav-height);
+    min-height: 100vh;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.docs-sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--color-bg-white);
+    border-right: 1px solid var(--color-border-light);
+    padding: 24px 0;
+    position: sticky;
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+}
+
+.docs-sidebar-inner {
+    padding: 0 16px;
+}
+
+.sidebar-group {
+    margin-bottom: 8px;
+}
+
+.sidebar-group-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    font-family: var(--font-sans);
+}
+
+.sidebar-group-header:hover {
+    background: var(--color-bg);
+}
+
+.sidebar-group-header svg {
+    color: var(--color-text-secondary);
+    flex-shrink: 0;
+}
+
+.sidebar-group-count {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+    background: var(--color-bg);
+    padding: 1px 7px;
+    border-radius: 100px;
+    margin-left: auto;
+}
+
+.sidebar-group-chevron {
+    margin-left: 4px;
+    transition: transform var(--transition-fast);
+}
+
+.sidebar-group-header:not(.active) .sidebar-group-chevron {
+    transform: rotate(-90deg);
+}
+
+.sidebar-group-header:not(.active) + .sidebar-group-items {
+    display: none;
+}
+
+.sidebar-group-items {
+    padding: 4px 0 4px 24px;
+}
+
+.sidebar-tool {
+    display: block;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-family: var(--font-mono);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.sidebar-tool:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+.sidebar-tool.active {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    font-weight: 500;
+}
+
+/* ============================================
+   SIDEBAR MOBILE TOGGLE
+   ============================================ */
+.sidebar-mobile-toggle {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.docs-content {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 48px 80px;
+    max-width: 900px;
+}
+
+.docs-content-inner {
+    max-width: 780px;
+}
+
+.docs-page-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.docs-page-desc {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+}
+
+/* ============================================
+   TOOL SECTIONS
+   ============================================ */
+.tool-section {
+    padding: 32px 0 40px;
+    border-top: 1px solid var(--color-border-light);
+}
+
+.tool-section:first-of-type {
+    border-top: none;
+    padding-top: 8px;
+}
+
+.tool-category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 100px;
+    margin-bottom: 16px;
+}
+
+.tool-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    margin-bottom: 6px;
+}
+
+.tool-desc {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+}
+
+.tool-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 28px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+/* ============================================
+   PARAM TABLE
+   ============================================ */
+.param-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+}
+
+.param-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.param-table thead {
+    background: var(--color-bg);
+}
+
+.param-table th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border-light);
+    white-space: nowrap;
+}
+
+.param-table td {
+    padding: 9px 16px;
+    border-bottom: 1px solid var(--color-border-light);
+    color: var(--color-text);
+    vertical-align: top;
+}
+
+.param-table tr:last-child td {
+    border-bottom: none;
+}
+
+.param-table code {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.type-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    color: #B45309;
+    background: #FEF3C7;
+    padding: 1px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.required-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #DC2626;
+    background: #FEE2E2;
+    padding: 1px 7px;
+    border-radius: 3px;
+}
+
+/* Nested field indentation */
+td.pl-6 { padding-left: 36px !important; }
+td.pl-10 { padding-left: 56px !important; }
+
+/* ============================================
+   EXAMPLE BLOCK
+   ============================================ */
+.example-block {
+    margin-bottom: 28px;
+}
+
+.example-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+}
+
+.example-code {
+    background: var(--color-bg-code);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.6;
+    color: #CDD6F4;
+    min-height: 48px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+    .docs-sidebar {
+        position: fixed;
+        left: -280px;
+        top: var(--nav-height);
+        z-index: 150;
+        width: 260px;
+        min-width: 260px;
+        transition: left var(--transition-normal);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .docs-sidebar.open {
+        left: 0;
+    }
+
+    .sidebar-mobile-toggle {
+        display: flex;
+    }
+
+    .docs-content {
+        padding: 24px 20px 80px;
+    }
+
+    .docs-page .nav-links {
+        display: none;
+    }
+
+    .docs-page .mobile-menu-btn {
+        display: flex;
+    }
+}
+
+@media (max-width: 640px) {
+    .docs-search-input {
+        width: 100px;
+    }
+
+    .docs-page-title {
+        font-size: 22px;
+    }
+
+    .tool-name {
+        font-size: 18px;
+    }
+
+    .param-table th,
+    .param-table td {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
