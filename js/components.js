@@ -50,14 +50,14 @@
     ].join('\n');
 
     // ======================================================
-    // Docs Navbar — used by docs.html (has search + login)
+    // Docs Navbar — used by docs.html
     // ======================================================
     var NAV_DOCS = [
     '<nav class="nav">',
     '  <div class="nav-container">',
     '    <div class="nav-brand">',
     '      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">',
-    '        <svg class="nav-logo" width="32" height="32" viewBox="0 0 32 32" fill="none">',
+    '        <svg class="nav-logo" width="32" height="32" viewBox="0 0 32 32" fill="none" style="display:none">',
     '          <circle cx="16" cy="16" r="14" stroke="url(#logo-grad)" stroke-width="2.5"/>',
     '          <path d="M16 4L22 16L16 28L10 16L16 4Z" fill="url(#logo-grad)" opacity="0.9"/>',
     '          <circle cx="16" cy="16" r="3" fill="white"/>',
@@ -76,16 +76,7 @@
     '      <a href="index.html#examples">使用示例</a>',
     '      <a href="docs.html" class="nav-link-docs">开发文档</a>',
     '    </div>',
-    '    <div class="nav-docs-actions">',
-    '      <div class="docs-search">',
-    '        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">',
-    '          <circle cx="7" cy="7" r="5.5" stroke="#94A3B8" stroke-width="1.3"/>',
-    '          <path d="M11 11L14.5 14.5" stroke="#94A3B8" stroke-width="1.3" stroke-linecap="round"/>',
-    '        </svg>',
-    '        <input type="text" class="docs-search-input" placeholder="搜索工具...">',
-    '      </div>',
-    '      <button class="btn-nav-cta" id="docsLoginBtn">登录</button>',
-    '    </div>',
+    '    <button class="btn-nav-cta" id="docsLoginBtn">登录</button>',
     '    <button class="mobile-menu-btn" id="docsMobileMenuBtn" aria-label="菜单">',
     '      <span></span><span></span><span></span>',
     '    </button>',
