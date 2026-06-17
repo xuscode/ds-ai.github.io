@@ -246,8 +246,8 @@ button {
 
 .btn-nav-cta {
     padding: 8px 20px;
-    background: var(--color-text);
-    color: var(--color-text-inverse);
+    background: var(--color-primary);
+    color: #fff;
     border-radius: var(--radius-md);
     font-size: 14px;
     font-weight: 600;

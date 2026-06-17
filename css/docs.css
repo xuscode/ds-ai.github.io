@@ -8,18 +8,6 @@
 }
 
 /* ============================================
-   NAV EXTENSIONS (docs-specific)
-   ============================================ */
-.docs-page .nav .btn-nav-cta {
-    padding: 8px 20px;
-    background: var(--color-primary);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: var(--radius-md);
-}
-
-/* ============================================
    SIDEBAR SEARCH
    ============================================ */
 .sidebar-search {
