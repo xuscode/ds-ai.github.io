@@ -196,7 +196,13 @@
                 codeEl = document.querySelector('.code-block code');
             }
         }
-        var codeText = codeEl.innerText;
+
+        // Use a temporary textarea to decode HTML entities and get plain text
+        var tmp = document.createElement('textarea');
+        tmp.innerHTML = codeEl.innerHTML
+            .replace(/<span[^>]*>/g, '')
+            .replace(/<\/span>/g, '');
+        var codeText = tmp.value;
 
         // Find the button that was clicked
         var btn = document.querySelector('.btn-copy[data-code="' + modeId + '"]');

@@ -301,10 +301,11 @@
                         <pre class="code-block"><code id="code-v6">{
   <span class="code-key">"mcpServers"</span>: {
     <span class="code-key">"3dexperience"</span>: {
-      <span class="code-key">"type"</span>: <span class="code-string">"streamablehttp"</span>,
-      <span class="code-key">"url"</span>: <span class="code-string">"https://3ds.example.com/api/mcp"</span>,
-      <span class="code-key">"headers"</span>: {
-        <span class="code-key">"Authorization"</span>: <span class="code-string">"Bearer &lt;YOUR_3DS_TOKEN&gt;"</span>
+      <span class="code-key">"command"</span>: <span class="code-string">"python"</span>,
+      <span class="code-key">"args"</span>: [<span class="code-string">"-m"</span>, <span class="code-string">"3dexperience_mcp.server"</span>],
+      <span class="code-key">"env"</span>: {
+        <span class="code-key">"3DS_URL"</span>: <span class="code-string">"https://3ds.example.com"</span>,
+        <span class="code-key">"3DS_TOKEN"</span>: <span class="code-string">"&lt;YOUR_3DS_TOKEN&gt;"</span>
       }
     }
   }

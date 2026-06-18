@@ -9,10 +9,11 @@
       }
     },
     "3dexperience": {
-      "type": "streamablehttp",
-      "url": "https://3ds.example.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer <YOUR_3DS_TOKEN>"
+      "command": "python",
+      "args": ["-m", "3dexperience_mcp.server"],
+      "env": {
+        "3DS_URL": "https://3ds.example.com",
+        "3DS_TOKEN": "<YOUR_3DS_TOKEN>"
       }
     }
   }
