@@ -41,7 +41,7 @@
     '      <a href="' + navHref('examples') + '">使用示例</a>',
     '      <a href="docs.html" class="nav-link-docs">开发文档</a>',
     '    </div>',
-    '    <button class="btn-nav-cta">登录</button>',
+    '    <button class="btn-nav-cta" id="loginBtn">登录</button>',
     '    <button class="mobile-menu-btn" aria-label="菜单">',
     '      <span></span><span></span><span></span>',
     '    </button>',

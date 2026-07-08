@@ -347,6 +347,115 @@
     });
 
     // ============================================
+    // Login Button — Show development notice modal
+    // ============================================
+    function showLoginModal() {
+        // Remove existing modal if any
+        var existing = document.getElementById('loginModal');
+        if (existing) existing.remove();
+
+        var overlay = document.createElement('div');
+        overlay.id = 'loginModal';
+        overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;';
+
+        var modal = document.createElement('div');
+        modal.style.cssText = 'background:#fff;border-radius:16px;padding:36px 32px;max-width:400px;width:90%;text-align:center;box-shadow:0 25px 50px rgba(0,0,0,0.25);transform:translateY(20px);transition:transform 0.3s ease;';
+
+        modal.innerHTML =
+            '<div style="font-size:20px;font-weight:700;color:#111827;margin-bottom:8px;">用户管理模块正在开发中</div>' +
+            '<div style="width:40px;height:4px;background:linear-gradient(90deg,#0078D7,#00B4D8);border-radius:2px;margin:12px auto 20px;"></div>' +
+            '<img src="cont/wechat.jpg" alt="微信二维码" style="width:160px;height:160px;border-radius:8px;margin:0 auto 16px;display:block;border:1px solid #E5E7EB;">' +
+            '<div style="font-size:14px;color:#4B5563;margin-bottom:6px;">请扫描微信添加好友</div>' +
+            '<div style="font-size:14px;color:#4B5563;margin-bottom:20px;">或者使用邮件 <a href="mailto:song_hsu@163.com" style="color:#0078D7;text-decoration:none;font-weight:500;">song_hsu@163.com</a> 与作者联系</div>' +
+            '<button id="loginModalClose" style="background:linear-gradient(135deg,#0078D7,#00B4D8);color:#fff;border:none;padding:10px 32px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity 0.2s;">我知道了</button>';
+
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+
+        // Animate in
+        requestAnimationFrame(function () {
+            overlay.style.opacity = '1';
+            modal.style.transform = 'translateY(0)';
+        });
+
+        // Close handlers
+        function closeModal() {
+            overlay.style.opacity = '0';
+            modal.style.transform = 'translateY(20px)';
+            setTimeout(function () { overlay.remove(); }, 300);
+        }
+
+        document.getElementById('loginModalClose').addEventListener('click', closeModal);
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) closeModal();
+        });
+    }
+
+    // Bind to login buttons (both standard and docs pages)
+    document.querySelectorAll('.btn-nav-cta').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            showLoginModal();
+        });
+    });
+
+    // ============================================
+    // Image Preview — Click to enlarge
+    // ============================================
+    function showImagePreview(src, alt) {
+        var existing = document.getElementById('imagePreview');
+        if (existing) existing.remove();
+
+        var overlay = document.createElement('div');
+        overlay.id = 'imagePreview';
+        overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease;cursor:zoom-out;';
+
+        var img = document.createElement('img');
+        img.src = src;
+        img.alt = alt || '';
+        img.style.cssText = 'max-width:90vw;max-height:90vh;width:auto;height:auto;border-radius:8px;box-shadow:0 25px 60px rgba(0,0,0,0.5);transform:scale(0.9);transition:transform 0.3s ease;';
+
+        var closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+        closeBtn.style.cssText = 'position:absolute;top:24px;right:24px;background:rgba(255,255,255,0.15);border:none;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;';
+        closeBtn.onmouseover = function () { this.style.background = 'rgba(255,255,255,0.25)'; };
+        closeBtn.onmouseout = function () { this.style.background = 'rgba(255,255,255,0.15)'; };
+
+        overlay.appendChild(img);
+        overlay.appendChild(closeBtn);
+        document.body.appendChild(overlay);
+
+        requestAnimationFrame(function () {
+            overlay.style.opacity = '1';
+            img.style.transform = 'scale(1)';
+        });
+
+        function closePreview() {
+            overlay.style.opacity = '0';
+            img.style.transform = 'scale(0.9)';
+            setTimeout(function () { overlay.remove(); }, 300);
+        }
+
+        closeBtn.addEventListener('click', closePreview);
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) closePreview();
+        });
+        document.addEventListener('keydown', function handleEscape(e) {
+            if (e.key === 'Escape') {
+                closePreview();
+                document.removeEventListener('keydown', handleEscape);
+            }
+        });
+    }
+
+    document.querySelectorAll('.showcase-img').forEach(function (img) {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function () {
+            showImagePreview(this.src, this.alt);
+        });
+    });
+
+    // ============================================
     // Initialize
     // ============================================
     if (window.scrollY > 10) {
