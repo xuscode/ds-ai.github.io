@@ -27,15 +27,15 @@
                     <input type="text" class="docs-search-input" placeholder="搜索工具...">
                 </div>
 
-                <!-- CATIA V5 — 基础 -->
+                <!-- CATIA V5 -->
                 <div class="sidebar-group">
-                    <button class="sidebar-group-header active" data-group="basic">
+                    <button class="sidebar-group-header active" data-group="v5">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/>
                             <path d="M8 5V8.5L10.5 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
                         </svg>
-                        <span>CATIA V5 — 基础</span>
-                        <span class="sidebar-group-count">4</span>
+                        <span>CATIA V5</span>
+                        <span class="sidebar-group-count">50</span>
                         <svg class="sidebar-group-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
                             <path d="M4 2.5L7.5 6L4 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -44,28 +44,113 @@
                         <a href="#catia_connect" class="sidebar-tool active" data-tool="catia_connect">catia_connect</a>
                         <a href="#catia_status" class="sidebar-tool" data-tool="catia_status">catia_status</a>
                         <a href="#new_part" class="sidebar-tool" data-tool="new_part">new_part</a>
+                        <a href="#new_part_timestamp" class="sidebar-tool" data-tool="new_part_timestamp">new_part_timestamp</a>
                         <a href="#save_current_document" class="sidebar-tool" data-tool="save_current_document">save_current_document</a>
-                    </div>
-                </div>
-
-                <!-- CATIA V5 — 几何 -->
-                <div class="sidebar-group">
-                    <button class="sidebar-group-header active" data-group="geometry">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
-                        </svg>
-                        <span>CATIA V5 — 几何</span>
-                        <span class="sidebar-group-count">5</span>
-                        <svg class="sidebar-group-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                            <path d="M4 2.5L7.5 6L4 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="sidebar-group-items">
                         <a href="#create_point" class="sidebar-tool" data-tool="create_point">create_point</a>
                         <a href="#create_sphere_surface" class="sidebar-tool" data-tool="create_sphere_surface">create_sphere_surface</a>
                         <a href="#create_cylinder_surface" class="sidebar-tool" data-tool="create_cylinder_surface">create_cylinder_surface</a>
                         <a href="#create_offset_plane" class="sidebar-tool" data-tool="create_offset_plane">create_offset_plane</a>
                         <a href="#new_part_with_sphere" class="sidebar-tool" data-tool="new_part_with_sphere">new_part_with_sphere</a>
+                        <a href="#extract_faces_with_color" class="sidebar-tool" data-tool="extract_faces_with_color">extract_faces_with_color</a>
+                        <a href="#create_gsd_line" class="sidebar-tool" data-tool="create_gsd_line">create_gsd_line</a>
+                        <a href="#create_circle" class="sidebar-tool" data-tool="create_circle">create_circle</a>
+                        <a href="#create_loft" class="sidebar-tool" data-tool="create_loft">create_loft</a>
+                        <a href="#create_fill" class="sidebar-tool" data-tool="create_fill">create_fill</a>
+                        <a href="#create_join_elements" class="sidebar-tool" data-tool="create_join_elements">create_join_elements</a>
+                        <a href="#create_projection_curve" class="sidebar-tool" data-tool="create_projection_curve">create_projection_curve</a>
+                        <a href="#create_intersection_curve" class="sidebar-tool" data-tool="create_intersection_curve">create_intersection_curve</a>
+                        <a href="#create_surface_offset_tool" class="sidebar-tool" data-tool="create_surface_offset_tool">create_surface_offset_tool</a>
+                        <a href="#create_extract_surface" class="sidebar-tool" data-tool="create_extract_surface">create_extract_surface</a>
+                        <a href="#create_sweep" class="sidebar-tool" data-tool="create_sweep">create_sweep</a>
+                        <a href="#create_trim_surface" class="sidebar-tool" data-tool="create_trim_surface">create_trim_surface</a>
+                        <a href="#create_sketch" class="sidebar-tool" data-tool="create_sketch">create_sketch</a>
+                        <a href="#sketch_open" class="sidebar-tool" data-tool="sketch_open">sketch_open</a>
+                        <a href="#sketch_add_line" class="sidebar-tool" data-tool="sketch_add_line">sketch_add_line</a>
+                        <a href="#sketch_add_circle" class="sidebar-tool" data-tool="sketch_add_circle">sketch_add_circle</a>
+                        <a href="#sketch_add_rectangle" class="sidebar-tool" data-tool="sketch_add_rectangle">sketch_add_rectangle</a>
+                        <a href="#sketch_add_arc" class="sidebar-tool" data-tool="sketch_add_arc">sketch_add_arc</a>
+                        <a href="#close_sketch" class="sidebar-tool" data-tool="close_sketch">close_sketch</a>
+                        <a href="#create_sketch_with_rectangle" class="sidebar-tool" data-tool="create_sketch_with_rectangle">create_sketch_with_rectangle</a>
+                        <a href="#create_sketch_with_circle" class="sidebar-tool" data-tool="create_sketch_with_circle">create_sketch_with_circle</a>
+                        <a href="#pad_from_sketch" class="sidebar-tool" data-tool="pad_from_sketch">pad_from_sketch</a>
+                        <a href="#pocket_from_sketch" class="sidebar-tool" data-tool="pocket_from_sketch">pocket_from_sketch</a>
+                        <a href="#shaft_from_sketch" class="sidebar-tool" data-tool="shaft_from_sketch">shaft_from_sketch</a>
+                        <a href="#add_edge_fillet" class="sidebar-tool" data-tool="add_edge_fillet">add_edge_fillet</a>
+                        <a href="#add_chamfer" class="sidebar-tool" data-tool="add_chamfer">add_chamfer</a>
+                        <a href="#create_hole" class="sidebar-tool" data-tool="create_hole">create_hole</a>
+                        <a href="#create_shell" class="sidebar-tool" data-tool="create_shell">create_shell</a>
+                        <a href="#create_block" class="sidebar-tool" data-tool="create_block">create_block</a>
+                        <a href="#create_cylinder" class="sidebar-tool" data-tool="create_cylinder">create_cylinder</a>
+                        <a href="#open_document" class="sidebar-tool" data-tool="open_document">open_document</a>
+                        <a href="#close_document" class="sidebar-tool" data-tool="close_document">close_document</a>
+                        <a href="#close_all_documents" class="sidebar-tool" data-tool="close_all_documents">close_all_documents</a>
+                        <a href="#list_open_documents" class="sidebar-tool" data-tool="list_open_documents">list_open_documents</a>
+                        <a href="#set_active_document" class="sidebar-tool" data-tool="set_active_document">set_active_document</a>
+                        <a href="#export_to_step" class="sidebar-tool" data-tool="export_to_step">export_to_step</a>
+                        <a href="#export_to_stl" class="sidebar-tool" data-tool="export_to_stl">export_to_stl</a>
+                        <a href="#export_to_igs" class="sidebar-tool" data-tool="export_to_igs">export_to_igs</a>
+                        <a href="#traverse_product_tree" class="sidebar-tool" data-tool="traverse_product_tree">traverse_product_tree</a>
+                        <a href="#export_bom" class="sidebar-tool" data-tool="export_bom">export_bom</a>
+                    </div>
+                </div>
+
+                <!-- PLM建筑与基础设施 -->
+                <div class="sidebar-group">
+                    <button class="sidebar-group-header" data-group="infra">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14V8L6 4H10L14 8V14H2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M6 8H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M4 11H12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M8 2V4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>PLM建筑与基础设施</span>
+                        <span class="sidebar-group-count">40</span>
+                        <svg class="sidebar-group-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M4 2.5L7.5 6L4 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="sidebar-group-items">
+                        <a href="#hello" class="sidebar-tool" data-tool="hello">hello</a>
+                        <a href="#echo" class="sidebar-tool" data-tool="echo">echo</a>
+                        <a href="#info" class="sidebar-tool" data-tool="info">info</a>
+                        <a href="#connect" class="sidebar-tool" data-tool="connect">connect</a>
+                        <a href="#test" class="sidebar-tool" data-tool="test">test</a>
+                        <a href="#active_part" class="sidebar-tool" data-tool="active_part">active-part</a>
+                        <a href="#settings" class="sidebar-tool" data-tool="settings">settings</a>
+                        <a href="#template" class="sidebar-tool" data-tool="template">template</a>
+                        <a href="#rename" class="sidebar-tool" data-tool="rename">rename</a>
+                        <a href="#batch_rename" class="sidebar-tool" data-tool="batch_rename">batch-rename</a>
+                        <a href="#rename_vb" class="sidebar-tool" data-tool="rename_vb">rename-vb</a>
+                        <a href="#rename_object" class="sidebar-tool" data-tool="rename_object">rename-object</a>
+                        <a href="#change_params_name" class="sidebar-tool" data-tool="change_params_name">change-params-name</a>
+                        <a href="#product" class="sidebar-tool" data-tool="product">product</a>
+                        <a href="#create_obj_to_part" class="sidebar-tool" data-tool="create_obj_to_part">create-obj-to-part</a>
+                        <a href="#list_params" class="sidebar-tool" data-tool="list_params">list-params</a>
+                        <a href="#infra_bridge_wireframe_t1" class="sidebar-tool" data-tool="infra_bridge_wireframe_t1">infra_bridge_wireframe_t1</a>
+                        <a href="#bridge_nest_net_lines" class="sidebar-tool" data-tool="bridge_nest_net_lines">bridge-nest-net-lines</a>
+                        <a href="#demo_hybrid" class="sidebar-tool" data-tool="demo_hybrid">demo-hybrid</a>
+                        <a href="#udf_instantiate" class="sidebar-tool" data-tool="udf_instantiate">udf-instantiate</a>
+                        <a href="#udf_replace" class="sidebar-tool" data-tool="udf_replace">udf-replace</a>
+                        <a href="#export_udf_params" class="sidebar-tool" data-tool="export_udf_params">export-udf-params</a>
+                        <a href="#update_udf_params" class="sidebar-tool" data-tool="update_udf_params">update-udf-params</a>
+                        <a href="#update_params_db" class="sidebar-tool" data-tool="update_params_db">update-params-db</a>
+                        <a href="#kp_autorun" class="sidebar-tool" data-tool="kp_autorun">kp-autorun</a>
+                        <a href="#write_drawingtable_bridge_a1" class="sidebar-tool" data-tool="write_drawingtable_bridge_a1">write_drawingtable_bridge_a1</a>
+                        <a href="#write_drawingtable_bridge_a2a3" class="sidebar-tool" data-tool="write_drawingtable_bridge_a2a3">write_drawingtable_bridge_a2a3</a>
+                        <a href="#write_drawingtable_bridge_a4a5" class="sidebar-tool" data-tool="write_drawingtable_bridge_a4a5">write_drawingtable_bridge_a4a5</a>
+                        <a href="#write_drawingtable_bridge_a6" class="sidebar-tool" data-tool="write_drawingtable_bridge_a6">write_drawingtable_bridge_a6</a>
+                        <a href="#drawing_table" class="sidebar-tool" data-tool="drawing_table">drawing-table</a>
+                        <a href="#drw_table_a1" class="sidebar-tool" data-tool="drw_table_a1">drw-table-a1</a>
+                        <a href="#write_drawingtable_vb" class="sidebar-tool" data-tool="write_drawingtable_vb">write-drawingtable-vb</a>
+                        <a href="#excel_to_drawing" class="sidebar-tool" data-tool="excel_to_drawing">excel-to-drawing</a>
+                        <a href="#set_cell_font" class="sidebar-tool" data-tool="set_cell_font">set-cell-font</a>
+                        <a href="#hello1" class="sidebar-tool" data-tool="hello1">hello1</a>
+                        <a href="#hello2" class="sidebar-tool" data-tool="hello2">hello2</a>
+                        <a href="#check" class="sidebar-tool" data-tool="check">check</a>
+                        <a href="#get_distance" class="sidebar-tool" data-tool="get_distance">get-distance</a>
+                        <a href="#get_length" class="sidebar-tool" data-tool="get_length">get-length</a>
+                        <a href="#get_point_coordinate" class="sidebar-tool" data-tool="get_point_coordinate">get-point-coordinate</a>
+                        <a href="#del_dim" class="sidebar-tool" data-tool="del_dim">del-dim</a>
                     </div>
                 </div>
             </div>
@@ -84,7 +169,7 @@
                 <!-- Overview -->
                 <section class="docs-section" id="overview">
                     <h1 class="docs-page-title">工具文档</h1>
-                    <p class="docs-page-desc">共 9 个工具，覆盖 CATIA V5 基础连接、零件创建及几何曲面建模，<br>
+                    <p class="docs-page-desc">共 90 个工具，覆盖 CATIA V5 基础连接、几何曲面、草图、Part Design 及文档管理五大模块，</p>
                         目前AI可以落地的,帮助工程师完成一些自动化和批量化的任务,例如实例化超级副本等模板,导出工程数据,数据的输入输出 <br>
                         在生成设计图纸这一项中，自动创建工程图框，插入2D部件，一些固定化的标注和注释生成，可以做一些批量的标注属性修改， <br>
                         因为接口限制，虽然有很多不完善的地方，是经过日积月累，会为我们的工作带来很大的便利性 <br>
@@ -98,7 +183,7 @@
                             <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/>
                             <path d="M8 5V8.5L10.5 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
                         </svg>
-                        <span>CATIA V5 — 基础</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">catia_connect</h2>
                     <p class="tool-desc">建立与 CATIA V5 应用程序的连接会话</p>
@@ -147,7 +232,7 @@
                             <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/>
                             <path d="M8 5V8.5L10.5 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
                         </svg>
-                        <span>CATIA V5 — 基础</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">catia_status</h2>
                     <p class="tool-desc">查询当前 CATIA 连接状态、活动文档及应用程序信息</p>
@@ -192,7 +277,7 @@
                             <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/>
                             <path d="M8 5V8.5L10.5 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
                         </svg>
-                        <span>CATIA V5 — 基础</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">new_part</h2>
                     <p class="tool-desc">在 CATIA 中创建一个新的 Part 文档</p>
@@ -231,6 +316,45 @@
                     </div>
                 </section>
 
+                <!-- ========== 基础 — new_part_timestamp ========== -->
+                <section class="docs-section tool-section" id="new_part_timestamp">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/>
+                            <path d="M8 5V8.5L10.5 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">new_part_timestamp</h2>
+                    <p class="tool-desc">创建带时间戳命名的新 Part 文档，避免命名冲突</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>prefix</code></td><td><span class="type-tag">string</span></td><td>—</td><td>零件名称前缀，默认 Part</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>partId</code></td><td><span class="type-tag">string</span></td><td>零件唯一 ID</td></tr>
+                                <tr><td><code>partName</code></td><td><span class="type-tag">string</span></td><td>带时间戳的零件名称</td></tr>
+                                <tr><td><code>timestamp</code></td><td><span class="type-tag">string</span></td><td>时间戳字符串</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
                 <!-- ========== 基础 — save_current_document ========== -->
                 <section class="docs-section tool-section" id="save_current_document">
                     <div class="tool-category-badge">
@@ -238,7 +362,7 @@
                             <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/>
                             <path d="M8 5V8.5L10.5 11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
                         </svg>
-                        <span>CATIA V5 — 基础</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">save_current_document</h2>
                     <p class="tool-desc">保存当前 CATIA 活动文档到指定路径</p>
@@ -283,7 +407,7 @@
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                             <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
                         </svg>
-                        <span>CATIA V5 — 几何</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">create_point</h2>
                     <p class="tool-desc">在活动零件中创建一个参考点，支持绝对坐标和偏移方式</p>
@@ -332,7 +456,7 @@
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                             <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
                         </svg>
-                        <span>CATIA V5 — 几何</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">create_sphere_surface <span class="tool-star">★</span></h2>
                     <p class="tool-desc">在活动零件中创建球体曲面，支持指定球心和半径</p>
@@ -382,7 +506,7 @@
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                             <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
                         </svg>
-                        <span>CATIA V5 — 几何</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">create_cylinder_surface</h2>
                     <p class="tool-desc">在活动零件中创建圆柱曲面，支持指定圆心轴、半径和高度</p>
@@ -433,7 +557,7 @@
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                             <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
                         </svg>
-                        <span>CATIA V5 — 几何</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">create_offset_plane</h2>
                     <p class="tool-desc">在活动零件中创建偏移参考平面</p>
@@ -481,7 +605,7 @@
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                             <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
                         </svg>
-                        <span>CATIA V5 — 几何</span>
+                        <span>CATIA V5</span>
                     </div>
                     <h2 class="tool-name">new_part_with_sphere <span class="tool-star">★</span></h2>
                     <p class="tool-desc">一键创建新零件并生成球体曲面，是最快捷的建模入口</p>
@@ -520,6 +644,1608 @@
                                 <tr><td><code>partName</code></td><td><span class="type-tag">string</span></td><td>零件名称</td></tr>
                                 <tr><td><code>surfaceId</code></td><td><span class="type-tag">string</span></td><td>球体曲面 ID</td></tr>
                                 <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td>球体半径 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — extract_faces_with_color ========== -->
+                <section class="docs-section tool-section" id="extract_faces_with_color">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">extract_faces_with_color</h2>
+                    <p class="tool-desc">根据颜色提取零件中的面，用于按颜色筛选几何元素</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>color</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>目标颜色名称或 RGB 值</td></tr>
+                                <tr><td><code>bodyName</code></td><td><span class="type-tag">string</span></td><td>—</td><td>指定几何体名称，为空则搜索全部</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>faceCount</code></td><td><span class="type-tag">number</span></td><td>提取的面数量</td></tr>
+                                <tr><td><code>faceIds</code></td><td><span class="type-tag">array[string]</span></td><td>提取的面对象 ID 列表</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_gsd_line ========== -->
+                <section class="docs-section tool-section" id="create_gsd_line">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_gsd_line</h2>
+                    <p class="tool-desc">在 GSD 创成式外形设计中创建直线元素</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>startPoint</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>起点参考或坐标</td></tr>
+                                <tr><td><code>endPoint</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>终点参考或坐标</td></tr>
+                                <tr><td><code>lineType</code></td><td><span class="type-tag">string</span></td><td>—</td><td>直线类型：point-point / point-direction</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>lineId</code></td><td><span class="type-tag">string</span></td><td>直线对象 ID</td></tr>
+                                <tr><td><code>length</code></td><td><span class="type-tag">number</span></td><td>直线长度 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_circle ========== -->
+                <section class="docs-section tool-section" id="create_circle">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_circle</h2>
+                    <p class="tool-desc">在创成式外形设计中创建圆或圆弧曲线</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>center</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>圆心点参考</td></tr>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆半径 mm</td></tr>
+                                <tr><td><code>support</code></td><td><span class="type-tag">string</span></td><td>—</td><td>支撑平面或曲面</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>circleId</code></td><td><span class="type-tag">string</span></td><td>圆对象 ID</td></tr>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td>圆半径 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_loft ========== -->
+                <section class="docs-section tool-section" id="create_loft">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_loft</h2>
+                    <p class="tool-desc">通过多个截面曲线创建放样曲面</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sections</code></td><td><span class="type-tag">array[string]</span></td><td><span class="required-badge">必填</span></td><td>截面曲线 ID 列表</td></tr>
+                                <tr><td><code>guides</code></td><td><span class="type-tag">array[string]</span></td><td>—</td><td>引导线 ID 列表</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>loftId</code></td><td><span class="type-tag">string</span></td><td>放样曲面对象 ID</td></tr>
+                                <tr><td><code>sectionCount</code></td><td><span class="type-tag">number</span></td><td>截面数量</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_fill ========== -->
+                <section class="docs-section tool-section" id="create_fill">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_fill</h2>
+                    <p class="tool-desc">通过边界曲线创建填充曲面</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>boundaries</code></td><td><span class="type-tag">array[string]</span></td><td><span class="required-badge">必填</span></td><td>边界曲线 ID 列表</td></tr>
+                                <tr><td><code>passingPoint</code></td><td><span class="type-tag">string</span></td><td>—</td><td>穿过点参考</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>fillId</code></td><td><span class="type-tag">string</span></td><td>填充曲面对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_join_elements ========== -->
+                <section class="docs-section tool-section" id="create_join_elements">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_join_elements</h2>
+                    <p class="tool-desc">将多个曲线或曲面元素连接为一个整体</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>elements</code></td><td><span class="type-tag">array[string]</span></td><td><span class="required-badge">必填</span></td><td>要连接的元素 ID 列表</td></tr>
+                                <tr><td><code>tolerance</code></td><td><span class="type-tag">number</span></td><td>—</td><td>合并公差 mm，默认 0.001</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>joinId</code></td><td><span class="type-tag">string</span></td><td>连接后对象 ID</td></tr>
+                                <tr><td><code>elementCount</code></td><td><span class="type-tag">number</span></td><td>连接的元素数量</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_projection_curve ========== -->
+                <section class="docs-section tool-section" id="create_projection_curve">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_projection_curve</h2>
+                    <p class="tool-desc">将曲线投影到支撑曲面上创建投影曲线</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>curve</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>要投影的曲线 ID</td></tr>
+                                <tr><td><code>support</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>支撑曲面 ID</td></tr>
+                                <tr><td><code>direction</code></td><td><span class="type-tag">string</span></td><td>—</td><td>投影方向，默认沿法线</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>projectionId</code></td><td><span class="type-tag">string</span></td><td>投影曲线 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_intersection_curve ========== -->
+                <section class="docs-section tool-section" id="create_intersection_curve">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_intersection_curve</h2>
+                    <p class="tool-desc">计算两个几何体的交线</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>firstElement</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>第一个几何元素 ID</td></tr>
+                                <tr><td><code>secondElement</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>第二个几何元素 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>intersectionId</code></td><td><span class="type-tag">string</span></td><td>交线对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_surface_offset_tool ========== -->
+                <section class="docs-section tool-section" id="create_surface_offset_tool">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_surface_offset_tool</h2>
+                    <p class="tool-desc">创建曲面的偏置/偏移曲面</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>surface</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>要偏移的曲面对象 ID</td></tr>
+                                <tr><td><code>offset</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>偏移距离 mm，可为负值</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>offsetSurfaceId</code></td><td><span class="type-tag">string</span></td><td>偏移曲面对象 ID</td></tr>
+                                <tr><td><code>offsetDistance</code></td><td><span class="type-tag">number</span></td><td>偏移距离 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_extract_surface ========== -->
+                <section class="docs-section tool-section" id="create_extract_surface">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_extract_surface</h2>
+                    <p class="tool-desc">从几何体中提取指定的面或边界</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>faceId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>要提取的面 ID</td></tr>
+                                <tr><td><code>propagationType</code></td><td><span class="type-tag">string</span></td><td>—</td><td>传播类型：point / tangent / none</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>extractId</code></td><td><span class="type-tag">string</span></td><td>提取的曲面对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_sweep ========== -->
+                <section class="docs-section tool-section" id="create_sweep">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_sweep</h2>
+                    <p class="tool-desc">沿引导线扫描截面轮廓创建扫掠曲面</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>profile</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>截面轮廓曲线 ID</td></tr>
+                                <tr><td><code>guideCurve</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>引导曲线 ID</td></tr>
+                                <tr><td><code>sweepType</code></td><td><span class="type-tag">string</span></td><td>—</td><td>扫掠类型：explicit / linear / circle</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sweepId</code></td><td><span class="type-tag">string</span></td><td>扫掠曲面对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 几何 — create_trim_surface ========== -->
+                <section class="docs-section tool-section" id="create_trim_surface">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1L8 4L13 1V15L8 12L3 15V1Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_trim_surface</h2>
+                    <p class="tool-desc">用曲线或曲面修剪另一个曲面</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>surface</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>被修剪的曲面对象 ID</td></tr>
+                                <tr><td><code>trimElement</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>修剪元素（曲线或曲面）ID</td></tr>
+                                <tr><td><code>keepSide</code></td><td><span class="type-tag">string</span></td><td>—</td><td>保留侧：left / right</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>trimmedSurfaceId</code></td><td><span class="type-tag">string</span></td><td>修剪后曲面对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — create_sketch ========== -->
+                <section class="docs-section tool-section" id="create_sketch">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_sketch</h2>
+                    <p class="tool-desc">在指定平面上创建一个新的草图</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>plane</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>草图平面：xy / yz / zx 或平面 ID</td></tr>
+                                <tr><td><code>sketchName</code></td><td><span class="type-tag">string</span></td><td>—</td><td>草图名称</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td>草绘对象 ID</td></tr>
+                                <tr><td><code>sketchName</code></td><td><span class="type-tag">string</span></td><td>草图名称</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — sketch_open ========== -->
+                <section class="docs-section tool-section" id="sketch_open">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">sketch_open</h2>
+                    <p class="tool-desc">打开已有草图进入编辑模式</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>草图对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td>草图对象 ID</td></tr>
+                                <tr><td><code>status</code></td><td><span class="type-tag">string</span></td><td>编辑状态</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — sketch_add_line ========== -->
+                <section class="docs-section tool-section" id="sketch_add_line">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">sketch_add_line</h2>
+                    <p class="tool-desc">在活动草图中添加直线段</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>startX</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>起点 X 坐标 mm</td></tr>
+                                <tr><td><code>startY</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>起点 Y 坐标 mm</td></tr>
+                                <tr><td><code>endX</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>终点 X 坐标 mm</td></tr>
+                                <tr><td><code>endY</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>终点 Y 坐标 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>lineId</code></td><td><span class="type-tag">string</span></td><td>直线对象 ID</td></tr>
+                                <tr><td><code>length</code></td><td><span class="type-tag">number</span></td><td>直线长度 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — sketch_add_circle ========== -->
+                <section class="docs-section tool-section" id="sketch_add_circle">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">sketch_add_circle</h2>
+                    <p class="tool-desc">在活动草图中添加圆</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>centerX</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆心 X 坐标 mm</td></tr>
+                                <tr><td><code>centerY</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆心 Y 坐标 mm</td></tr>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆半径 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>circleId</code></td><td><span class="type-tag">string</span></td><td>圆对象 ID</td></tr>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td>圆半径 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — sketch_add_rectangle ========== -->
+                <section class="docs-section tool-section" id="sketch_add_rectangle">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">sketch_add_rectangle</h2>
+                    <p class="tool-desc">在活动草图中添加矩形</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>x1</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>左上角 X 坐标 mm</td></tr>
+                                <tr><td><code>y1</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>左上角 Y 坐标 mm</td></tr>
+                                <tr><td><code>x2</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>右下角 X 坐标 mm</td></tr>
+                                <tr><td><code>y2</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>右下角 Y 坐标 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>rectangleId</code></td><td><span class="type-tag">string</span></td><td>矩形对象 ID</td></tr>
+                                <tr><td><code>width</code></td><td><span class="type-tag">number</span></td><td>宽度 mm</td></tr>
+                                <tr><td><code>height</code></td><td><span class="type-tag">number</span></td><td>高度 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — sketch_add_arc ========== -->
+                <section class="docs-section tool-section" id="sketch_add_arc">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">sketch_add_arc</h2>
+                    <p class="tool-desc">在活动草图中添加圆弧</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>centerX</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆心 X 坐标 mm</td></tr>
+                                <tr><td><code>centerY</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆心 Y 坐标 mm</td></tr>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆弧半径 mm</td></tr>
+                                <tr><td><code>startAngle</code></td><td><span class="type-tag">number</span></td><td>—</td><td>起始角度（度）</td></tr>
+                                <tr><td><code>endAngle</code></td><td><span class="type-tag">number</span></td><td>—</td><td>终止角度（度）</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>arcId</code></td><td><span class="type-tag">string</span></td><td>圆弧对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — close_sketch ========== -->
+                <section class="docs-section tool-section" id="close_sketch">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">close_sketch</h2>
+                    <p class="tool-desc">退出草图编辑模式并保存草图</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td colspan="4" style="text-align:center;color:var(--color-text-tertiary);padding:16px;">无入参</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td>草图对象 ID</td></tr>
+                                <tr><td><code>status</code></td><td><span class="type-tag">string</span></td><td>退出状态</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — create_sketch_with_rectangle ========== -->
+                <section class="docs-section tool-section" id="create_sketch_with_rectangle">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_sketch_with_rectangle</h2>
+                    <p class="tool-desc">一键创建草图并在其中绘制矩形</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>plane</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>草图平面</td></tr>
+                                <tr><td><code>width</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>矩形宽度 mm</td></tr>
+                                <tr><td><code>height</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>矩形高度 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td>草图对象 ID</td></tr>
+                                <tr><td><code>rectangleId</code></td><td><span class="type-tag">string</span></td><td>矩形对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 草图 — create_sketch_with_circle ========== -->
+                <section class="docs-section tool-section" id="create_sketch_with_circle">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 14L4 10L10 4L12 6L6 12L2 14Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 5L11 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M12 3L13 2L14 3L13 4L12 3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_sketch_with_circle</h2>
+                    <p class="tool-desc">一键创建草图并在其中绘制圆</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>plane</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>草图平面</td></tr>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆半径 mm</td></tr>
+                                <tr><td><code>centerX</code></td><td><span class="type-tag">number</span></td><td>—</td><td>圆心 X 坐标 mm，默认 0</td></tr>
+                                <tr><td><code>centerY</code></td><td><span class="type-tag">number</span></td><td>—</td><td>圆心 Y 坐标 mm，默认 0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td>草图对象 ID</td></tr>
+                                <tr><td><code>circleId</code></td><td><span class="type-tag">string</span></td><td>圆对象 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — pad_from_sketch ========== -->
+                <section class="docs-section tool-section" id="pad_from_sketch">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">pad_from_sketch</h2>
+                    <p class="tool-desc">将草图轮廓拉伸为实体（凸台）</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>草图对象 ID</td></tr>
+                                <tr><td><code>length</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>拉伸长度 mm</td></tr>
+                                <tr><td><code>direction</code></td><td><span class="type-tag">string</span></td><td>—</td><td>拉伸方向：normal / reverse</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>padId</code></td><td><span class="type-tag">string</span></td><td>凸台特征 ID</td></tr>
+                                <tr><td><code>length</code></td><td><span class="type-tag">number</span></td><td>拉伸长度 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — pocket_from_sketch ========== -->
+                <section class="docs-section tool-section" id="pocket_from_sketch">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">pocket_from_sketch</h2>
+                    <p class="tool-desc">将草图轮廓拉伸切除实体（凹槽）</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>草图对象 ID</td></tr>
+                                <tr><td><code>depth</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>切除深度 mm</td></tr>
+                                <tr><td><code>direction</code></td><td><span class="type-tag">string</span></td><td>—</td><td>切除方向：normal / reverse</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>pocketId</code></td><td><span class="type-tag">string</span></td><td>凹槽特征 ID</td></tr>
+                                <tr><td><code>depth</code></td><td><span class="type-tag">number</span></td><td>切除深度 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — shaft_from_sketch ========== -->
+                <section class="docs-section tool-section" id="shaft_from_sketch">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">shaft_from_sketch</h2>
+                    <p class="tool-desc">将草图轮廓绕轴线旋转生成实体（旋转体）</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>sketchId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>草图对象 ID</td></tr>
+                                <tr><td><code>angle</code></td><td><span class="type-tag">number</span></td><td>—</td><td>旋转角度（度），默认 360</td></tr>
+                                <tr><td><code>axis</code></td><td><span class="type-tag">string</span></td><td>—</td><td>旋转轴线参考</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>shaftId</code></td><td><span class="type-tag">string</span></td><td>旋转体特征 ID</td></tr>
+                                <tr><td><code>angle</code></td><td><span class="type-tag">number</span></td><td>旋转角度（度）</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — add_edge_fillet ========== -->
+                <section class="docs-section tool-section" id="add_edge_fillet">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">add_edge_fillet</h2>
+                    <p class="tool-desc">对实体边进行倒圆角处理</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>edgeIds</code></td><td><span class="type-tag">array[string]</span></td><td><span class="required-badge">必填</span></td><td>要倒圆角的边 ID 列表</td></tr>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆角半径 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>filletId</code></td><td><span class="type-tag">string</span></td><td>倒圆角特征 ID</td></tr>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td>圆角半径 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — add_chamfer ========== -->
+                <section class="docs-section tool-section" id="add_chamfer">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">add_chamfer</h2>
+                    <p class="tool-desc">对实体边进行倒角处理</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>edgeIds</code></td><td><span class="type-tag">array[string]</span></td><td><span class="required-badge">必填</span></td><td>要倒角的边 ID 列表</td></tr>
+                                <tr><td><code>length1</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>倒角长度1 mm</td></tr>
+                                <tr><td><code>length2</code></td><td><span class="type-tag">number</span></td><td>—</td><td>倒角长度2 mm，默认同 length1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>chamferId</code></td><td><span class="type-tag">string</span></td><td>倒角特征 ID</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — create_hole ========== -->
+                <section class="docs-section tool-section" id="create_hole">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_hole</h2>
+                    <p class="tool-desc">在实体上创建孔特征</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>faceId</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>放置面 ID</td></tr>
+                                <tr><td><code>diameter</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>孔直径 mm</td></tr>
+                                <tr><td><code>depth</code></td><td><span class="type-tag">number</span></td><td>—</td><td>孔深度 mm，为空则通孔</td></tr>
+                                <tr><td><code>centerX</code></td><td><span class="type-tag">number</span></td><td>—</td><td>孔中心 X 坐标</td></tr>
+                                <tr><td><code>centerY</code></td><td><span class="type-tag">number</span></td><td>—</td><td>孔中心 Y 坐标</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>holeId</code></td><td><span class="type-tag">string</span></td><td>孔特征 ID</td></tr>
+                                <tr><td><code>diameter</code></td><td><span class="type-tag">number</span></td><td>孔直径 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — create_shell ========== -->
+                <section class="docs-section tool-section" id="create_shell">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_shell</h2>
+                    <p class="tool-desc">将实体抽壳为薄壁结构</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>thickness</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>壳厚度 mm</td></tr>
+                                <tr><td><code>faceIds</code></td><td><span class="type-tag">array[string]</span></td><td>—</td><td>要移除的面 ID 列表</td></tr>
+                                <tr><td><code>side</code></td><td><span class="type-tag">string</span></td><td>—</td><td>抽壳方向：inward / outward</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>shellId</code></td><td><span class="type-tag">string</span></td><td>抽壳特征 ID</td></tr>
+                                <tr><td><code>thickness</code></td><td><span class="type-tag">number</span></td><td>壳厚度 mm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — create_block ========== -->
+                <section class="docs-section tool-section" id="create_block">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_block</h2>
+                    <p class="tool-desc">快速创建长方体实体</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>length</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>长度 mm</td></tr>
+                                <tr><td><code>width</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>宽度 mm</td></tr>
+                                <tr><td><code>height</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>高度 mm</td></tr>
+                                <tr><td><code>origin</code></td><td><span class="type-tag">object</span></td><td>—</td><td>原点坐标 {x, y, z}</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>blockId</code></td><td><span class="type-tag">string</span></td><td>长方体特征 ID</td></tr>
+                                <tr><td><code>volume</code></td><td><span class="type-tag">number</span></td><td>体积 mm³</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== Part Design — create_cylinder ========== -->
+                <section class="docs-section tool-section" id="create_cylinder">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 3L8 1L14 3V13L8 15L2 13V3Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M2 3L8 5L14 3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M8 5V15" stroke="currentColor" stroke-width="1.3"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">create_cylinder</h2>
+                    <p class="tool-desc">快速创建圆柱体实体</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>radius</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆柱半径 mm</td></tr>
+                                <tr><td><code>height</code></td><td><span class="type-tag">number</span></td><td><span class="required-badge">必填</span></td><td>圆柱高度 mm</td></tr>
+                                <tr><td><code>center</code></td><td><span class="type-tag">object</span></td><td>—</td><td>底面圆心坐标 {x, y, z}</td></tr>
+                                <tr><td><code>axis</code></td><td><span class="type-tag">string</span></td><td>—</td><td>轴线方向：x / y / z，默认 z</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>cylinderId</code></td><td><span class="type-tag">string</span></td><td>圆柱体特征 ID</td></tr>
+                                <tr><td><code>volume</code></td><td><span class="type-tag">number</span></td><td>体积 mm³</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — open_document ========== -->
+                <section class="docs-section tool-section" id="open_document">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">open_document</h2>
+                    <p class="tool-desc">打开指定路径的 CATIA 文档</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>path</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>文档文件路径</td></tr>
+                                <tr><td><code>readOnly</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>是否只读打开，默认 false</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>documentName</code></td><td><span class="type-tag">string</span></td><td>文档名称</td></tr>
+                                <tr><td><code>documentType</code></td><td><span class="type-tag">string</span></td><td>文档类型：Part / Product / Drawing</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — close_document ========== -->
+                <section class="docs-section tool-section" id="close_document">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">close_document</h2>
+                    <p class="tool-desc">关闭指定的 CATIA 文档</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>documentName</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>文档名称或索引</td></tr>
+                                <tr><td><code>save</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>关闭前是否保存，默认 false</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>closed</code></td><td><span class="type-tag">boolean</span></td><td>是否成功关闭</td></tr>
+                                <tr><td><code>documentName</code></td><td><span class="type-tag">string</span></td><td>已关闭的文档名称</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — close_all_documents ========== -->
+                <section class="docs-section tool-section" id="close_all_documents">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">close_all_documents</h2>
+                    <p class="tool-desc">关闭所有已打开的 CATIA 文档</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>saveAll</code></td><td><span class="type-tag">boolean</span></td><td>—</td><td>关闭前是否全部保存，默认 false</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>closedCount</code></td><td><span class="type-tag">number</span></td><td>已关闭的文档数量</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — list_open_documents ========== -->
+                <section class="docs-section tool-section" id="list_open_documents">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">list_open_documents</h2>
+                    <p class="tool-desc">列出当前所有已打开的 CATIA 文档</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td colspan="4" style="text-align:center;color:var(--color-text-tertiary);padding:16px;">无入参</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>documents</code></td><td><span class="type-tag">array[object]</span></td><td>打开的文档列表</td></tr>
+                                <tr><td><code>count</code></td><td><span class="type-tag">number</span></td><td>打开的文档总数</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — set_active_document ========== -->
+                <section class="docs-section tool-section" id="set_active_document">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">set_active_document</h2>
+                    <p class="tool-desc">将指定文档设置为当前活动文档</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>documentName</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>文档名称或索引</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>activeDocument</code></td><td><span class="type-tag">string</span></td><td>当前活动文档名称</td></tr>
+                                <tr><td><code>success</code></td><td><span class="type-tag">boolean</span></td><td>是否成功激活</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — export_to_step ========== -->
+                <section class="docs-section tool-section" id="export_to_step">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">export_to_step</h2>
+                    <p class="tool-desc">将当前文档导出为 STEP 格式文件</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>path</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>导出文件路径</td></tr>
+                                <tr><td><code>version</code></td><td><span class="type-tag">string</span></td><td>—</td><td>STEP 版本：AP203 / AP214 / AP242</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>exportedPath</code></td><td><span class="type-tag">string</span></td><td>导出文件路径</td></tr>
+                                <tr><td><code>success</code></td><td><span class="type-tag">boolean</span></td><td>是否导出成功</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — export_to_stl ========== -->
+                <section class="docs-section tool-section" id="export_to_stl">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">export_to_stl</h2>
+                    <p class="tool-desc">将当前文档导出为 STL 格式文件</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>path</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>导出文件路径</td></tr>
+                                <tr><td><code>quality</code></td><td><span class="type-tag">string</span></td><td>—</td><td>导出质量：low / medium / high</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>exportedPath</code></td><td><span class="type-tag">string</span></td><td>导出文件路径</td></tr>
+                                <tr><td><code>triangleCount</code></td><td><span class="type-tag">number</span></td><td>三角面数量</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — export_to_igs ========== -->
+                <section class="docs-section tool-section" id="export_to_igs">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">export_to_igs</h2>
+                    <p class="tool-desc">将当前文档导出为 IGES 格式文件</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>path</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>导出文件路径</td></tr>
+                                <tr><td><code>version</code></td><td><span class="type-tag">string</span></td><td>—</td><td>IGES 版本号</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>exportedPath</code></td><td><span class="type-tag">string</span></td><td>导出文件路径</td></tr>
+                                <tr><td><code>success</code></td><td><span class="type-tag">boolean</span></td><td>是否导出成功</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — traverse_product_tree ========== -->
+                <section class="docs-section tool-section" id="traverse_product_tree">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">traverse_product_tree</h2>
+                    <p class="tool-desc">遍历产品结构树，获取完整的产品层级信息</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>rootProduct</code></td><td><span class="type-tag">string</span></td><td>—</td><td>根产品名称，默认当前活动文档</td></tr>
+                                <tr><td><code>depth</code></td><td><span class="type-tag">number</span></td><td>—</td><td>遍历深度，默认全部</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>productTree</code></td><td><span class="type-tag">object</span></td><td>产品结构树 JSON</td></tr>
+                                <tr><td><code>nodeCount</code></td><td><span class="type-tag">number</span></td><td>节点总数</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ========== 文档管理 — export_bom ========== -->
+                <section class="docs-section tool-section" id="export_bom">
+                    <div class="tool-category-badge">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 1.5H9L13 5.5V14.5H3V1.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M9 1.5V5.5H13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            <path d="M5 8H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M5 10.5H9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
+                        <span>CATIA V5</span>
+                    </div>
+                    <h2 class="tool-name">export_bom</h2>
+                    <p class="tool-desc">导出产品物料清单（BOM）到指定文件</p>
+
+                    <h3 class="tool-subtitle">入参</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>参数名</th><th>类型</th><th>必填</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>path</code></td><td><span class="type-tag">string</span></td><td><span class="required-badge">必填</span></td><td>导出文件路径（Excel 或文本）</td></tr>
+                                <tr><td><code>format</code></td><td><span class="type-tag">string</span></td><td>—</td><td>导出格式：xlsx / csv / txt</td></tr>
+                                <tr><td><code>template</code></td><td><span class="type-tag">string</span></td><td>—</td><td>BOM 模板名称</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="tool-subtitle">响应 data</h3>
+                    <div class="param-table-wrap">
+                        <table class="param-table">
+                            <thead>
+                                <tr><th>字段</th><th>类型</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>exportedPath</code></td><td><span class="type-tag">string</span></td><td>导出文件路径</td></tr>
+                                <tr><td><code>itemCount</code></td><td><span class="type-tag">number</span></td><td>BOM 条目数量</td></tr>
                             </tbody>
                         </table>
                     </div>
