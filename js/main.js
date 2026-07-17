@@ -20,16 +20,16 @@
     // Mode-specific content
     const modeContent = {
         mcp: {
-            title: 'MCP 协议接入 — 标准开放，即配即用',
-            desc: '基于标准 MCP 协议，一行 JSON 配置即可让 AI 客户端连接 CATIA 与 3DEXPERIENCE'
+            title: I18N.t('mode.mcp.title'),
+            desc: I18N.t('mode.mcp.desc')
         },
         cli: {
-            title: 'CLI 命令行 — 一键下载CLI 工具包',
-            desc: '通过命令行工具，一键下载打包开发好的CAA AUTOMATION CLI程序，调用更省Token'
+            title: I18N.t('mode.cli.title'),
+            desc: I18N.t('mode.cli.desc')
         },
         skill: {
-            title: 'My 3DEXPERIENCE Skill — 技能包',
-            desc: '让 agent 搭建工作流，让多种工具协同工作，实现复杂任务的自动化'
+            title: I18N.t('mode.skill.title'),
+            desc: I18N.t('mode.skill.desc')
         }
     };
 
@@ -460,6 +460,60 @@
     // ============================================
     if (window.scrollY > 10) {
         nav.classList.add('scrolled');
+    }
+
+    // ============================================
+    // Language Toggle
+    // ============================================
+    function initLangToggle() {
+        var btn = document.getElementById('langToggle') || document.getElementById('langToggleDocs');
+        if (!btn) return;
+
+        // Set initial label
+        var label = btn.querySelector('.lang-label');
+        if (label) {
+            label.textContent = I18N.currentLang === 'zh' ? 'EN' : '中';
+        }
+
+        btn.addEventListener('click', function () {
+            var newLang = I18N.currentLang === 'zh' ? 'en' : 'zh';
+            I18N.setLang(newLang);
+        });
+    }
+
+    // Listen for language change and update dynamic content
+    document.addEventListener('langchange', function (e) {
+        var lang = e.detail.lang;
+
+        // Update lang toggle button label
+        var btn = document.getElementById('langToggle') || document.getElementById('langToggleDocs');
+        if (btn) {
+            var label = btn.querySelector('.lang-label');
+            if (label) {
+                label.textContent = lang === 'zh' ? 'EN' : '中';
+            }
+        }
+
+        // Update mode content
+        modeContent.mcp = { title: I18N.t('mode.mcp.title'), desc: I18N.t('mode.mcp.desc') };
+        modeContent.cli = { title: I18N.t('mode.cli.title'), desc: I18N.t('mode.cli.desc') };
+        modeContent.skill = { title: I18N.t('mode.skill.title'), desc: I18N.t('mode.skill.desc') };
+
+        // Re-apply active mode content
+        var activeTab = document.querySelector('.mode-tab.active');
+        if (activeTab) {
+            var activeMode = activeTab.getAttribute('data-mode');
+            if (activeMode && modeContent[activeMode]) {
+                if (modeTitle) modeTitle.textContent = modeContent[activeMode].title;
+                if (modeDesc) modeDesc.textContent = modeContent[activeMode].desc;
+            }
+        }
+    });
+
+    // Initialize language toggle and apply saved language
+    initLangToggle();
+    if (I18N.currentLang !== 'zh') {
+        I18N.setLang(I18N.currentLang);
     }
 
 })();

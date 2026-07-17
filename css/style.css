@@ -254,6 +254,33 @@ button {
     transition: all var(--transition-normal);
 }
 
+.btn-lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+}
+
+.btn-lang-toggle:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+.btn-lang-toggle .lang-label {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
 .btn-nav-cta:hover {
     background: var(--color-primary);
     transform: translateY(-1px);
