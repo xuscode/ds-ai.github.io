@@ -337,4 +337,14 @@
     setLang: setLang,
     t: t
   };
+
+  // Auto-apply saved language on page load
+  // Wait for DOM to be ready before updating elements
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setLang(currentLang);
+    });
+  } else {
+    setLang(currentLang);
+  }
 })();

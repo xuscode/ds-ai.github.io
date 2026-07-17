@@ -510,10 +510,7 @@
         }
     });
 
-    // Initialize language toggle and apply saved language
+    // Initialize language toggle (saved language auto-applied by i18n.js)
     initLangToggle();
-    if (I18N.currentLang !== 'zh') {
-        I18N.setLang(I18N.currentLang);
-    }
 
 })();
